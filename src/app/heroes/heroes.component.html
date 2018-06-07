@@ -1,0 +1,41 @@
+<!--{{hero|json}}-->
+<!--|json is a pipe which will transfer a value in the interpolation to a json style file-->
+<!--<h2>{{hero.name | uppercase}} Details</h2>-->
+<h2>Hero Details</h2>
+<!--<div><span>id: </span>{{hero.id}}</div>-->
+<!--<div><span>name: </span>{{hero.name}}</div>-->
+<!--<div>-->
+  <!--<label>name:-->
+    <!--&lt;!&ndash;[(ngModel)] is a 2way binding in angular relying on formsModule which actually is a form template-driven forms&ndash;&gt;-->
+    <!--&lt;!&ndash;more suggest to use reactive form rather than [(ngModel)] in angular&ndash;&gt;-->
+    <!--<input [(ngModel)]="hero.name" placeholder="name">-->
+  <!--</label>-->
+<!--</div>-->
+<!--list of heroes-->
+<!--using *ngFor as structural directive-->
+<!--<ul>-->
+  <!--<li *ngFor="let hero of heroes">-->
+    <!--<span>-->
+      <!--{{hero.id}}-->
+    <!--</span>-->
+    <!--{{hero.name}}-->
+  <!--</li>-->
+<!--</ul>-->
+<!--using material nav-list for the list-->
+<mat-nav-list style="width: 300px;">
+  <a mat-list-item *ngFor="let hero of heroes" routerLink="/details/{{hero.id}}">
+    <span>{{hero.id}}</span>.
+    <span>{{hero.name}}</span>
+  </a>
+</mat-nav-list>
+<!--using angular material for the input box-->
+<form>
+  <mat-form-field>
+    <!--name attribute is required if you want to use [(ngModel)] in the form tag-->
+    <input matInput placeholder="name" [(ngModel)]="temp" name="name">
+  </mat-form-field>
+</form>
+<!--When selectedHero is undefined the ngIf removes the hero detail from the DOM There are no selectedHero bindings to worry about-->
+<!--move this part to the other component hero-details-->
+<!--then using child component selector to show the child component-->
+<!--<app-hero-details [hero]="selectedHero"></app-hero-details>-->

@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--{{...}}is a  interpolation binding which presents the component's title property value inside the HTML header tag-->
+<h1>{{title}}</h1>
+<nav>
+  <a mat-button routerLink="/heroes" color="primary">Heroes</a>
+  <!--<a routerLink="/heroes">Heroes</a>-->
+  <a mat-button routerLink="/dashboard" color="primary">Dashboard</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>

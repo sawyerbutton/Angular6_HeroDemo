@@ -1,0 +1,8 @@
+<div *ngIf="hero">
+  <h2>{{hero.name}} details</h2>
+  <mat-chip-list>
+    <mat-chip>{{hero.id}}</mat-chip>
+    <mat-chip>{{hero.name}}</mat-chip>
+  </mat-chip-list>
+</div>
+<a mat-button (click)="goBack()" color="primary">Back</a>
