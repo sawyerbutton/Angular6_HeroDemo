@@ -1,0 +1,13 @@
+<h4>
+  Hero Search
+</h4>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+<input matInput #searchBox id="search-box" (keyup)="search(searchBox.value)">
+  </mat-form-field>
+</form>
+<mat-list>
+  <mat-list-item *ngFor="let hero of heroes$ | async">
+    <a mat-button routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+  </mat-list-item>
+</mat-list>

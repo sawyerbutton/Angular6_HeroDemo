@@ -8,11 +8,13 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule} from '@angular/common/http';
 // third party packages
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 
 
@@ -23,11 +25,13 @@ import { MatButtonModule } from '@angular/material/button';
     HeroDetailsComponent,
     MessagesComponent,
     DashboardComponent,
+    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     // third party modules imports
     MatInputModule,
     MatListModule,

@@ -23,18 +23,21 @@
 <!--</ul>-->
 <!--using material nav-list for the list-->
 <mat-nav-list style="width: 300px;">
-  <a mat-list-item *ngFor="let hero of heroes" routerLink="/details/{{hero.id}}">
+  <mat-list-item *ngFor="let hero of heroes">
     <span>{{hero.id}}</span>.
     <span>{{hero.name}}</span>
-  </a>
+    <a mat-button routerLink="/details/{{hero.id}}" style="align-content: right">Link</a>
+    <button mat-raised-button color="danger" (click)="delete(hero)" style="align-content: right">Delete Hero</button>
+  </mat-list-item>
 </mat-nav-list>
 <!--using angular material for the input box-->
 <form>
   <mat-form-field>
     <!--name attribute is required if you want to use [(ngModel)] in the form tag-->
-    <input matInput placeholder="name" [(ngModel)]="temp" name="name">
+    <input matInput placeholder="name" #heroName>
   </mat-form-field>
 </form>
+<button mat-raised-button (click)="add(heroName.value); heroName.value=''">Add</button>
 <!--When selectedHero is undefined the ngIf removes the hero detail from the DOM There are no selectedHero bindings to worry about-->
 <!--move this part to the other component hero-details-->
 <!--then using child component selector to show the child component-->
